@@ -120,6 +120,7 @@ const DrakAndDrop = () => {
               {item.title}
             </Item>
           ))}
+          <input type="radio" />
         </Board>
       ))}
     </Container>
