@@ -62,6 +62,7 @@ const DrakAndDrop = () => {
       const currentIndex = newItems.indexOf(currentItem);
       newItems.splice(currentIndex, 1);
       newItems.splice(newItems.indexOf(targetItem), 0, currentItem);
+
       const newBoards = boards.map((board) => {
         if (board.id === currentBoard.id) {
           board.items = newItems;
@@ -72,12 +73,15 @@ const DrakAndDrop = () => {
     } else {
       const sourceBoard = currentBoard;
       const sourceItem = currentItem;
+
       const newSourceItems = [...sourceBoard.items];
       const sourceIndex = newSourceItems.indexOf(sourceItem);
       newSourceItems.splice(sourceIndex, 1);
+
       const newTargetItems = [...targetBoard.items];
       const targetIndex = newTargetItems.indexOf(targetItem);
       newTargetItems.splice(targetIndex + 1, 0, sourceItem);
+
       const newBoards = boards.map((board) => {
         if (board.id === sourceBoard.id) {
           board.items = newSourceItems;
