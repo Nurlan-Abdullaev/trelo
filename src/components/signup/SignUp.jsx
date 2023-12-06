@@ -1,10 +1,10 @@
-import React from "react";
-import { styled } from "styled-components";
-import { Button, OutlinedInput } from "@mui/material";
-import { NavLink, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firbase";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import { styled } from 'styled-components';
+import { Button, OutlinedInput } from '@mui/material';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firbase';
+import { useForm } from 'react-hook-form';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -20,8 +20,9 @@ const Signup = () => {
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/trello");
-        console.log(user);
+        navigate('/trello');
+        console.log(user, 'im user');
+        console.log('helllo');
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -40,7 +41,7 @@ const Signup = () => {
               required
               type="email"
               placeholder="Email address"
-              {...register("email")}
+              {...register('email')}
             />
             {errors.email && <p>{errors.email.message}</p>}
 
@@ -48,25 +49,25 @@ const Signup = () => {
               required
               type="password"
               placeholder="Password"
-              {...register("password")}
+              {...register('password')}
             />
             {errors.password && <p>{errors.password.message}</p>}
 
             <Button
               style={{
-                width: "200px",
-                backgroundColor: "green",
-                color: "#fff",
+                width: '200px',
+                backgroundColor: 'green',
+                color: '#fff',
               }}
               type="submit"
             >
               Sign up
             </Button>
             <div>
-              <p style={{ color: "#066506d4" }}>
+              <p style={{ color: '#066506d4' }}>
                 Already have an account?
                 <NavLink
-                  style={{ textDecoration: "none", color: "#066506d4" }}
+                  style={{ textDecoration: 'none', color: '#066506d4' }}
                   to="/"
                 >
                   Sign in
@@ -79,19 +80,19 @@ const Signup = () => {
     </form>
   );
 };
-const Container = styled("div")`
+const Container = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 `;
-const MiniContainer = styled("div")`
+const MiniContainer = styled('div')`
   width: 300px;
   height: 350px;
   box-shadow: 0px 6px 18px 14px rgba(34, 60, 80, 0.2);
   background-color: #fff;
 `;
-const ContainerInput = styled("div")`
+const ContainerInput = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;

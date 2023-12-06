@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { Button } from "@mui/material";
-import { styled } from "styled-components";
-import { Todo } from "../todo/nameTodo/Todo";
-import Modal from "../todo/Modal";
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Button } from '@mui/material';
+import { styled } from 'styled-components';
+import { Todo } from '../todo/nameTodo/Todo';
+import Modal from '../todo/Modal';
 
 export const TodoList = () => {
   const todos = useSelector((state) => state.todos.todo);
@@ -11,6 +11,7 @@ export const TodoList = () => {
 
   function changeDeleteModalState() {
     setOpenModal((prev) => !prev);
+    console.log('hi');
   }
 
   return (
@@ -21,11 +22,11 @@ export const TodoList = () => {
             <MiniContainer>
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "10px",
-                  color: "#fff",
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '10px',
+                  color: '#fff',
                 }}
               >
                 <h2 contentEditable="true">{todo.text}</h2>
