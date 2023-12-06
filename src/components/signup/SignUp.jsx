@@ -21,8 +21,7 @@ const Signup = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         navigate('/trello');
-        console.log(user, 'im user');
-        console.log('helllo');
+        console.log(user, 'userrrrrr');
       })
       .catch((error) => {
         const errorCode = error.code;
